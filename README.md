@@ -18,32 +18,35 @@ Deploy and manage apps in Kubernetes locally using **Minikube**, **kubectl**, an
 ## Steps
 
 1. **Start Minikube Cluster**  
-   `minikube start`
+   - `minikube start`
 
-2. **Deploy App:**  
-   `kubectl apply -f deployment.yaml`
-   `kubectl apply -f service.yaml`
+2. **Deploy App:**
    
-3. **Check Deployment:**
-   `kubectl get pods`
-   `kubectl get service`
+   - `kubectl apply -f deployment.yaml`
+   - `kubectl apply -f service.yaml`
+   
+4. **Check Deployment:**
+   
+   - `kubectl get pods`
+   - `kubectl get service`
  
-4. **Access Service:**
+5. **Access Service:**
+   
     `minikube service nginx-service --url`
 
-5. **Scale Deployment:**
+7. **Scale Deployment:**
+   
     `kubectl scale deployment/nginx-deployment --replicas=4`
 
-6. **Update Deployment:**  
+9. **Update Deployment:**
+      
     - Change image version in `deployment.yaml` to prefered nginx version (e.g., `nginx:1.21`).
 
-7. **Clean Up:**
-   `kubectl delete -f deployment.yaml`  
-   `kubectl delete -f service.yaml`  
-   `minikube stop`
-
-## Architecture
-  ![Nginx Output](docs/nginx-output.png)
+11. **Clean Up:**
+    
+   - `kubectl delete -f deployment.yaml`  
+   - `kubectl delete -f service.yaml`  
+   - `minikube stop`
 
 ## Files
 
@@ -54,4 +57,7 @@ Deploy and manage apps in Kubernetes locally using **Minikube**, **kubectl**, an
 
 ## Author
   S NAGAVEENA
+
+## Architecture
+  ![Nginx Output](docs/nginx-output.png)
 

@@ -1,2 +1,57 @@
-# devops-minkube-kubernetes-starter
-A beginner-friendly DevOps project for deploying and managing applications on a local kubernetes cluster using Minikube and kubectl.
+# Kubernetes Cluster with Minikube
+
+## Objective
+Deploy and manage apps in Kubernetes locally using **Minikube**, **kubectl**, and **Docker**.
+
+## Project Structure
+
+- `deployment.yaml`: Kubernetes Deployment manifest.
+- `service.yaml`: Kubernetes Service manifest.
+- `scripts/`: Automation/setup scripts.
+- `docs/`: Documentation and diagrams.
+
+## Prerequisites
+- Docker
+- Minikube
+- kubectl
+
+## Steps
+
+1. **Start Minikube Cluster**  
+   `minikube start`
+
+2. **Deploy App:**  
+   `kubectl apply -f deployment.yaml`
+   `kubectl apply -f service.yaml`
+   
+3. **Check Deployment:**
+   `kubectl get pods`
+   `kubectl get service`
+ 
+4. **Access Service:**
+    `minikube service nginx-service --url`
+
+5. **Scale Deployment:**
+    `kubectl scale deployment/nginx-deployment --replicas=4`
+
+6. **Update Deployment:**  
+    - Change image version in `deployment.yaml` to prefered nginx version (e.g., `nginx:1.21`).
+
+7. **Clean Up:**
+   `kubectl delete -f deployment.yaml`  
+   `kubectl delete -f service.yaml`  
+   `minikube stop`
+
+## Architecture
+  ![Nginx Output](docs/nginx-output.png)
+
+## Files
+
+- `deployment.yaml`: Main deployment.
+- `service.yaml`: Service for exposure.
+- `docs/`: Architectural diagrams, screenshots.
+- `scripts/`: Automation/installation scripts.
+
+## Author
+  S NAGAVEENA
+
